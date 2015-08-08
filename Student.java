@@ -1,4 +1,4 @@
-package CS356Project1;
+
 
 import java.util.UUID;
 public class Student {
