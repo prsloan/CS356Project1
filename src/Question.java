@@ -8,6 +8,7 @@ public interface Question {
 	public void setQuestionText(String question); 
 	
 	
+	public void addAnswer(int index);
 	public int getType();
 	
 	
