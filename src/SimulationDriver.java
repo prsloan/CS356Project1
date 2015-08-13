@@ -1,7 +1,15 @@
 import java.util.Random;
 
 
-
+/**
+ * This class will drive  a simulation utilizing the IvoteService and the Student and Question objects.
+ * It simply creates 100 students, and has each one randomly vote on a randomly generated pool of either
+ * true/false questions or multiple choice.  
+ * 
+ * 
+ * @author prsloan
+ *
+ */
 public class SimulationDriver {
 
 	public static void main(String[] args) {

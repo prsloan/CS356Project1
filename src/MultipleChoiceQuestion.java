@@ -17,12 +17,28 @@ public class MultipleChoiceQuestion implements Question{
 	private String answers[] = {"A", "B","C", "D", "E"};
 	private String questionText;
 	
+	private MultipleChoiceQuestion(){
+		
+	}
+	
+	/**
+	 * A static factory constructor
+	 * 
+	 * @return a new MultipleChoiceQuestion
+	 */
+	public static MultipleChoiceQuestion newMultipleChoiceQuestion(){
+		return new MultipleChoiceQuestion();
+	}
+	
+	
+	
+	
+	
 	@Override
 	public void setQuestionText(String question) {
 		this.questionText = question;
 		
 	}
-
 
 
 	@Override
@@ -57,7 +73,6 @@ public class MultipleChoiceQuestion implements Question{
 		}
 		
 	}
-
 
 
 	@Override

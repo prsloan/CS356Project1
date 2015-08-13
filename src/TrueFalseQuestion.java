@@ -1,7 +1,11 @@
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * This class implements the Question interface for a True/False type question.
+ * @author prsloan
+ *
+ */
 public class TrueFalseQuestion implements Question{
 	
 	private int answerTrackingArray[] = {0,0};
@@ -9,8 +13,24 @@ public class TrueFalseQuestion implements Question{
 	private String[] answers = {"True", "False"};
 	private String questionText;
 	
+	private TrueFalseQuestion(){
+		
+	}
+	
+	/**
+	 * A static factory contstructor
+	 * @return
+	 */
+	public static TrueFalseQuestion newTrueFalseQuestion(){
+		return new TrueFalseQuestion();
+	}
+	
 	
 	@Override
+	/**
+	 * Sets the question text.
+	 * 
+	 */
 	public void setQuestionText(String question) {
 		this.questionText = question;
 		
