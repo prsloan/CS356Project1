@@ -15,12 +15,11 @@ public class MultipleChoiceQuestion implements Question{
 	private int answerTrackingArray[] = {0,0,0,0,0} ;
 	private Set<String> voterIDs = new HashSet<String>();
 	private String answers[] = {"A", "B","C", "D", "E"};
-	
-	
+	private String questionText;
 	
 	@Override
 	public void setQuestionText(String question) {
-		// TODO Auto-generated method stub
+		this.questionText = question;
 		
 	}
 
@@ -35,16 +34,27 @@ public class MultipleChoiceQuestion implements Question{
 
 	@Override
 	public boolean addAnswer(int index, String id) {
-		return false;
-		// TODO Auto-generated method stub
-		
+		//validate values
+		if (voterIDs.contains(id)){
+			return false;  //this user has voted on this question already
+		}
+		else if((index < 0)||(index>4)){
+			return false; //answer out of range
+		}
+		else{
+		answerTrackingArray[index]++;	
+		return true;
+		}
 	}
 
 
 
 	@Override
 	public void resetQuestion() {
-		// TODO Auto-generated method stub
+		voterIDs.clear();
+		for(int i=0; i< answerTrackingArray.length; i++){
+			answerTrackingArray[i] = 0;
+		}
 		
 	}
 
@@ -57,11 +67,17 @@ public class MultipleChoiceQuestion implements Question{
 	}
 
 
-
 	@Override
 	public String[] getAnswerString() {
 		// TODO Auto-generated method stub
 		return answers;
 	}
 
+	
+	@Override
+	public String toString(){
+		return questionText + " ?\n [A]\n[B]\n[C]\n[D]\n[E]";
+	
+		
+	}
 }

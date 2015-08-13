@@ -66,16 +66,23 @@ public String displayCurrentResultsForQuestionAtIndex(int questionIndex)throws I
 	else{
 		answerString = questionPool.get(questionIndex).getAnswerString();
 		results = questionPool.get(questionIndex).getCurrentResults();
-		
+		resultString.append("Question #"+questionIndex+" results :");
 		for(int i=0; i<results.length;i++){
-			resultString.append("[ "+ answerString[i] + " ] :" + results[i] + "\n");
+			resultString.append("[ "+ answerString[i] + " ] :" + results[i] + "\t");
 		}
-		
+		resultString.append("\n");
 		return resultString.toString();
 		
 	}
 }
 
+public int getVoteAttempts(){
+	return votesAttempted;
+}
+
+public int getSuccessfulVotes(){
+	return votesSuccessful;
+}
 
 
 
