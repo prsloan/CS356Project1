@@ -18,13 +18,13 @@ public class TrueFalseQuestion implements Question{
 	
 	@Override
 	public int getType() {
-		// TODO Auto-generated method stub
-		return 0;
+		return TRUE_FALSE;
 	}
 
 
 	@Override
-	public void addAnswer(int index, String id) {
+	public boolean addAnswer(int index, String id) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
@@ -33,6 +33,18 @@ public class TrueFalseQuestion implements Question{
 	public void resetQuestion() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int[] getCurrentResults() {
+		// TODO Auto-generated method stub
+		return answerTrackingArray;
+	}
+
+	@Override
+	public String[] getAnswerString() {
+		// TODO Auto-generated method stub
+		return answers;
 	}
 
 }
